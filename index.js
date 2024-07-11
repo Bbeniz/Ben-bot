@@ -534,7 +534,7 @@ async function accountLogin(state, enableCommands = [], prefix, admin = []) {
 							const { threadID } = event;
 
 					if (event.logMessageData.addedParticipants && Array.isArray(event.logMessageData.addedParticipants) && event.logMessageData.addedParticipants.some(i => i.userFbId == userid)) {
-					api.changeNickname(`𝗛𝗔𝗖𝗞𝗔𝗜[🌐]➤𝗕𝗢𝗧☕ 𝗬𝗢𝗨𝗥 𝗣𝗙✦:『${prefix}』`, threadID, userid);
+					api.changeNickname(`𝗟𝗘 𝗩𝗜𝗗𝗘 [🌐]➤𝗕𝗢𝗧☕ 𝗬𝗢𝗨𝗥 𝗣𝗙✦:『${prefix}』`, threadID, userid);
 
 let gifUrls = [
         "https://i.ibb.co/JHS1WNL/image.gif",
@@ -553,7 +553,7 @@ axios.get(gifUrl, { responseType: 'arraybuffer' })
 				fs.writeFileSync(gifPath, response.data); 
 				return api.sendMessage("𝗕𝗢𝗧 ➤[🌐] 𝗖𝗢𝗡𝗡𝗘𝗖𝗧𝗜𝗡𝗚 ▂ ▃ ▄ ", event.threadID, () => 
 						api.sendMessage({ 
-								body:`✔|𝗖𝗢𝗡𝗡𝗘𝗖𝗧𝗘𝗗\n\n 𝗡𝗔𝗠𝗘 [☕]: 𝗛𝗔𝗖𝗞𝗔𝗬➤𝗕𝗢𝗧☪\n\n 𝗣𝗥𝗘𝗙𝗜𝗫 : [.] \n\n 𝗔𝗗𝗠𝗜𝗜𝗡 𝗜𝗡𝗙𝗢 ♔ : 𝗣𝗛𝗔𝗥𝗢𝗨𝗞 ✦\n\n 𝗙𝗔𝗖𝗘𝗕𝗢𝗢𝗞 𝗟𝗜𝗡𝗞 ◆: https://www.facebook.com/more.sidibe.1?mibextid=JRoKGi `, 
+								body:`✔|𝗖𝗢𝗡𝗡𝗘𝗖𝗧𝗘𝗗\n\n 𝗡𝗔𝗠𝗘 [☕]: 𝗟𝗘 𝗩𝗜𝗗𝗘➤𝗕𝗢𝗧☪\n\n 𝗣𝗥𝗘𝗙𝗜𝗫 : [.] \n\n 𝗔𝗗𝗠𝗜𝗜𝗡 𝗜𝗡𝗙𝗢 ♔ : 𝗟𝗘 𝗩𝗜𝗗𝗘 ✦\n\n 𝗙𝗔𝗖𝗘𝗕𝗢𝗢𝗞 𝗟𝗜𝗡𝗞 ◆: https://www.facebook.com/100084918384589 `, 
 								attachment: fs.createReadStream(gifPath)
 						}, event.threadID)
 				);
@@ -776,7 +776,7 @@ axios.get(gifUrl, { responseType: 'arraybuffer' })
 
 													file.on('finish', () => {
 														file.close(() => {
-															api.sendMessage({ body: `𝖠𝗎𝗍𝗈 𝖣𝗈𝗐𝗇 𝖸𝗈𝗎𝖳𝗎𝖻𝖾 \n\n𝘼𝙆𝘼𝙄 𝘽𝙊𝙏 ⚪🟢`, attachment: fs.createReadStream(filePath) }, event.threadID, () => fs.unlinkSync(filePath));
+															api.sendMessage({ body: `𝖠𝗎𝗍𝗈 𝖣𝗈𝗐𝗇 𝖸𝗈𝗎𝖳𝗎𝖻𝖾 \n\n𝙇𝙀 𝙑𝙄𝘿𝙀 𝘽𝙊𝙏 ⚪🟢`, attachment: fs.createReadStream(filePath) }, event.threadID, () => fs.unlinkSync(filePath));
 														});
 													});
 												})
@@ -798,7 +798,7 @@ axios.get(gifUrl, { responseType: 'arraybuffer' })
 																	const result = await getFBInfo(url);
 																	let videoData = await axios.get(encodeURI(result.sd), { responseType: 'arraybuffer' });
 																	fs.writeFileSync(fbvid, Buffer.from(videoData.data, "utf-8"));
-																	return api.sendMessage({ body: "𝖠𝗎𝗍𝗈 𝖣𝗈𝗐𝗇 𝖥𝖺𝖼𝖾𝖻𝗈𝗈𝗄 𝖵𝗂𝖽𝖾𝗈\n\n シƬHƐᗩ© 🟢⚪", attachment: fs.createReadStream(fbvid) }, event.threadID, () => fs.unlinkSync(fbvid));
+																	return api.sendMessage({ body: "𝖠𝗎𝗍𝗈 𝖣𝗈𝗐𝗇 𝖥𝖺𝖼𝖾𝖻𝗈𝗈𝗄 𝖵𝗂𝖽𝖾𝗈\n\n 𝙱𝙴𝙽© 🟢⚪", attachment: fs.createReadStream(fbvid) }, event.threadID, () => fs.unlinkSync(fbvid));
 																}
 																catch (e) {
 																	return console.log(e);
